@@ -1,0 +1,76 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "MultiPlayerSessionsSubsystem.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+#ifdef MULTIPLAYERSESSIONS_MultiPlayerSessionsSubsystem_generated_h
+#error "MultiPlayerSessionsSubsystem.generated.h already included, missing '#pragma once' in MultiPlayerSessionsSubsystem.h"
+#endif
+#define MULTIPLAYERSESSIONS_MultiPlayerSessionsSubsystem_generated_h
+
+#define FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_13_DELEGATE \
+MULTIPLAYERSESSIONS_API void FMultiPlayerOnCreateSessionComplete_DelegateWrapper(const FMulticastScriptDelegate& MultiPlayerOnCreateSessionComplete, bool bWasSuccessful);
+
+
+#define FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_16_DELEGATE \
+MULTIPLAYERSESSIONS_API void FMultiPlayerOnStartSessionComplete_DelegateWrapper(const FMulticastScriptDelegate& MultiPlayerOnStartSessionComplete, bool bWasSuccessful);
+
+
+#define FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_17_DELEGATE \
+MULTIPLAYERSESSIONS_API void FMultiPlayerOnDestroySessionComplete_DelegateWrapper(const FMulticastScriptDelegate& MultiPlayerOnDestroySessionComplete, bool bWasSuccessful);
+
+
+#define FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_SPARSE_DATA
+#define FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_ACCESSORS
+#define FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUMultiPlayerSessionsSubsystem(); \
+	friend struct Z_Construct_UClass_UMultiPlayerSessionsSubsystem_Statics; \
+public: \
+	DECLARE_CLASS(UMultiPlayerSessionsSubsystem, UGameInstanceSubsystem, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/MultiPlayerSessions"), NO_API) \
+	DECLARE_SERIALIZER(UMultiPlayerSessionsSubsystem)
+
+
+#define FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UMultiPlayerSessionsSubsystem(UMultiPlayerSessionsSubsystem&&); \
+	NO_API UMultiPlayerSessionsSubsystem(const UMultiPlayerSessionsSubsystem&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UMultiPlayerSessionsSubsystem); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UMultiPlayerSessionsSubsystem); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UMultiPlayerSessionsSubsystem) \
+	NO_API virtual ~UMultiPlayerSessionsSubsystem();
+
+
+#define FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_22_PROLOG
+#define FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_SPARSE_DATA \
+	FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_ACCESSORS \
+	FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_INCLASS_NO_PURE_DECLS \
+	FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h_25_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> MULTIPLAYERSESSIONS_API UClass* StaticClass<class UMultiPlayerSessionsSubsystem>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_MultiPlayerSessionsSubsystem_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -1,0 +1,9 @@
+{
+	"SourceFiles": [
+		"D:\\MultiPlayerShooter\\Blaster\\Source\\Blaster\\Blaster.Build.cs",
+		"D:\\MultiPlayerShooter\\Blaster\\Plugins\\MultiPlayerSessions\\Source\\MultiPlayerSessions\\MultiPlayerSessions.Build.cs",
+		"D:\\MultiPlayerShooter\\Blaster\\Source\\Blaster.Target.cs",
+		"D:\\MultiPlayerShooter\\Blaster\\Source\\BlasterEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}
