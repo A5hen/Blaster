@@ -6,6 +6,7 @@
 #include "GameFramework/CharacterMovementComponent.h"//
 #include "Kismet/KismetMathLibrary.h"//
 #include "Blaster/Weapon/Weapon.h"//
+#include "Blaster/CombatState.h"//
 
 void UBlasterAnimInstance::NativeInitializeAnimation()
 {
@@ -32,6 +33,7 @@ void UBlasterAnimInstance::NativeUpdateAnimation(float DeltaTime)
 	bIsAccelerating = BlasterCharacter->GetCharacterMovement()->GetCurrentAcceleration().Size() > 0 ? true : false;
 
 	bWeaponEquipped = BlasterCharacter->IsWeaponEquipped();
+
 	EquippedWeapon = BlasterCharacter->GetEquippedWeapon();
 
 	bIsCrouched = BlasterCharacter->bIsCrouched;
@@ -40,6 +42,12 @@ void UBlasterAnimInstance::NativeUpdateAnimation(float DeltaTime)
 
 	TurningInPlace = BlasterCharacter->GetTurningInPlace();
 
+	bRotateRootBone = BlasterCharacter->ShouldRotateRootBone();
+
+	bElimmed = BlasterCharacter->IsElimmed();
+
+	bHoldingTheFlag = BlasterCharacter->IsHoldingTheFlag();
+
 	//Offset Yaw for Strafing
 	FRotator AimRotation = BlasterCharacter->GetBaseAimRotation();
 	FRotator MovementRotation = UKismetMathLibrary::MakeRotFromX(BlasterCharacter->GetVelocity());
@@ -47,6 +55,7 @@ void UBlasterAnimInstance::NativeUpdateAnimation(float DeltaTime)
 	DeltaRotation = FMath::RInterpTo(DeltaRotation, DeltaRot, GetDeltaSeconds(), 6.f);
 	YawOffset = DeltaRotation.Yaw;
 
+	//Lean
 	CharacterRotationLastFrame = CharacterRotation;
 	CharacterRotation = BlasterCharacter->GetActorRotation();
 	const FRotator Delta = UKismetMathLibrary::NormalizedDeltaRotator(CharacterRotation, CharacterRotationLastFrame);
@@ -59,11 +68,37 @@ void UBlasterAnimInstance::NativeUpdateAnimation(float DeltaTime)
 
 	if (bWeaponEquipped && EquippedWeapon && EquippedWeapon->GetWeaponMesh() && BlasterCharacter->GetMesh())
 	{
+		//Fix LeftHand Position in BoneSpace
 		LeftHandTransform = EquippedWeapon->GetWeaponMesh()->GetSocketTransform(FName("LeftHandSocket"), ERelativeTransformSpace::RTS_World);
 		FVector OutPosition;
 		FRotator OutRotation;
 		BlasterCharacter->GetMesh()->TransformToBoneSpace(FName("hand_r"), LeftHandTransform.GetLocation(), FRotator::ZeroRotator, OutPosition, OutRotation);
 		LeftHandTransform.SetLocation(OutPosition);
 		LeftHandTransform.SetRotation(FQuat(OutRotation));
+
+		//Fix RightHand Rotation on LocalMachine
+		if (BlasterCharacter->IsLocallyControlled())
+		{
+			bIsLocallyControlled = true;
+			FTransform RightHandTransform = BlasterCharacter->GetMesh()->GetSocketTransform(FName("hand_r"), ERelativeTransformSpace::RTS_World);
+			FRotator LookAtRotation= UKismetMathLibrary::FindLookAtRotation(
+				RightHandTransform.GetLocation(),
+				RightHandTransform.GetLocation() + (RightHandTransform.GetLocation() - BlasterCharacter->GetHitTarget()));
+			RightHandRotation = FMath::RInterpTo(RightHandRotation, LookAtRotation, DeltaTime, 30.f);
+		}
 	}
+
+	bUseFABRIK = BlasterCharacter->GetCombatState() == ECombatState::ECS_Unoccupied;
+
+	bool bFABRIKOverride = 
+		BlasterCharacter->IsLocallyControlled() && 
+		BlasterCharacter->GetCombatState() != ECombatState::ECS_ThrowingGrenade && 
+		BlasterCharacter->bFinishedSwaping;
+	if (bFABRIKOverride)
+	{
+		bUseFABRIK = !BlasterCharacter->IsLocallyReloading();
+	}
+
+	bUseAimOffset = BlasterCharacter->GetCombatState() == ECombatState::ECS_Unoccupied && !BlasterCharacter->GetDisableGameplay();
+	bTransformRightHand = BlasterCharacter->GetCombatState() == ECombatState::ECS_Unoccupied && !BlasterCharacter->GetDisableGameplay();
 }

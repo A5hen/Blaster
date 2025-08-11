@@ -11,6 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeMenu() {}
 // Cross Module References
 	MULTIPLAYERSESSIONS_API UClass* Z_Construct_UClass_UMenu();
 	MULTIPLAYERSESSIONS_API UClass* Z_Construct_UClass_UMenu_NoRegister();
+	MULTIPLAYERSESSIONS_API UClass* Z_Construct_UClass_UMultiPlayerSessionsSubsystem_NoRegister();
 	UMG_API UClass* Z_Construct_UClass_UButton_NoRegister();
 	UMG_API UClass* Z_Construct_UClass_UUserWidget();
 	UPackage* Z_Construct_UPackage__Script_MultiPlayerSessions();
@@ -308,6 +309,18 @@ void EmptyLinkFunctionForGeneratedCodeMenu() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_JoinButton_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_JoinButton;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MultiPlayerSessionsSubsystem_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_MultiPlayerSessionsSubsystem;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ConnectionsNum_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_ConnectionsNum;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_TypeToMatch_MetaData[];
+#endif
+		static const UECodeGen_Private::FStrPropertyParams NewProp_TypeToMatch;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -351,9 +364,34 @@ void EmptyLinkFunctionForGeneratedCodeMenu() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMenu_Statics::NewProp_JoinButton = { "JoinButton", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMenu, JoinButton), Z_Construct_UClass_UButton_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UMenu_Statics::NewProp_JoinButton_MetaData), Z_Construct_UClass_UMenu_Statics::NewProp_JoinButton_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMenu_Statics::NewProp_MultiPlayerSessionsSubsystem_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Menu.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMenu_Statics::NewProp_MultiPlayerSessionsSubsystem = { "MultiPlayerSessionsSubsystem", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMenu, MultiPlayerSessionsSubsystem), Z_Construct_UClass_UMultiPlayerSessionsSubsystem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UMenu_Statics::NewProp_MultiPlayerSessionsSubsystem_MetaData), Z_Construct_UClass_UMenu_Statics::NewProp_MultiPlayerSessionsSubsystem_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMenu_Statics::NewProp_ConnectionsNum_MetaData[] = {
+		{ "AllowPrivateAccess", "TRUE" },
+		{ "Category", "Menu" },
+		{ "ModuleRelativePath", "Public/Menu.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UMenu_Statics::NewProp_ConnectionsNum = { "ConnectionsNum", nullptr, (EPropertyFlags)0x0040000000000004, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMenu, ConnectionsNum), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UMenu_Statics::NewProp_ConnectionsNum_MetaData), Z_Construct_UClass_UMenu_Statics::NewProp_ConnectionsNum_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMenu_Statics::NewProp_TypeToMatch_MetaData[] = {
+		{ "AllowPrivateAccess", "TRUE" },
+		{ "Category", "Menu" },
+		{ "ModuleRelativePath", "Public/Menu.h" },
+	};
+#endif
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_UMenu_Statics::NewProp_TypeToMatch = { "TypeToMatch", nullptr, (EPropertyFlags)0x0040000000000004, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMenu, TypeToMatch), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UMenu_Statics::NewProp_TypeToMatch_MetaData), Z_Construct_UClass_UMenu_Statics::NewProp_TypeToMatch_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMenu_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMenu_Statics::NewProp_HostButton,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMenu_Statics::NewProp_JoinButton,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMenu_Statics::NewProp_MultiPlayerSessionsSubsystem,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMenu_Statics::NewProp_ConnectionsNum,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMenu_Statics::NewProp_TypeToMatch,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UMenu_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UMenu>::IsAbstract,
@@ -394,9 +432,9 @@ void EmptyLinkFunctionForGeneratedCodeMenu() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_Menu_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UMenu, UMenu::StaticClass, TEXT("UMenu"), &Z_Registration_Info_UClass_UMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMenu), 2818254245U) },
+		{ Z_Construct_UClass_UMenu, UMenu::StaticClass, TEXT("UMenu"), &Z_Registration_Info_UClass_UMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMenu), 650827298U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_Menu_h_445786575(TEXT("/Script/MultiPlayerSessions"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_Menu_h_2229015152(TEXT("/Script/MultiPlayerSessions"),
 		Z_CompiledInDeferFile_FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_Menu_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MultiPlayerShooter_Blaster_Plugins_MultiPlayerSessions_Source_MultiPlayerSessions_Public_Menu_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -47,6 +47,23 @@ void UMenu::MenuSetup(int32 NumPublicConnections, FString MatchType, FString Lob
 	}
 }
 
+void UMenu::MenuTearDown()
+{
+	RemoveFromParent();
+
+	UWorld* World = GetWorld();
+	if (World)
+	{
+		APlayerController* PlayerController = World->GetFirstPlayerController();
+		if (PlayerController)
+		{
+			FInputModeGameOnly InputModeData;
+			PlayerController->SetInputMode(InputModeData);
+			PlayerController->SetShowMouseCursor(false);
+		}
+	}
+}
+
 bool UMenu::Initialize()
 {
 	if (!Super::Initialize())return false;
@@ -128,7 +145,6 @@ void UMenu::OnFindSessions(const TArray<FOnlineSessionSearchResult>& SearchResul
 void UMenu::OnJoinSession(EOnJoinSessionCompleteResult::Type Result)
 {
 	IOnlineSubsystem* OnlineSubsystem = IOnlineSubsystem::Get();
-
 	if (OnlineSubsystem)
 	{
 		IOnlineSessionPtr SessionInterface = OnlineSubsystem->GetSessionInterface();
@@ -172,22 +188,5 @@ void UMenu::JoinButtonClicked()
 	if (MultiPlayerSessionsSubsystem)
 	{
 		MultiPlayerSessionsSubsystem->FindSessions(10000);
-	}
-}
-
-void UMenu::MenuTearDown()
-{
-	RemoveFromParent();
-
-	UWorld* World = GetWorld();
-	if (World)
-	{
-		APlayerController* PlayerController = World->GetFirstPlayerController();
-		if (PlayerController)
-		{
-			FInputModeGameOnly InputModeData;
-			PlayerController->SetInputMode(InputModeData);
-			PlayerController->SetShowMouseCursor(false);
-		}
 	}
 }

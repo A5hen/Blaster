@@ -11,6 +11,8 @@
     <None Include="..\..\Source\BlasterEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
@@ -78,6 +80,9 @@
     <Filter Include="Source\Blaster">
       <UniqueIdentifier>{EE28103A-87BB-3197-B9AF-A82E99E2013A}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\Blaster\Announcement.h">
+      <Filter>Source\Blaster</Filter>
+    </ClInclude>
     <None Include="..\..\Source\Blaster\Blaster.Build.cs">
       <Filter>Source\Blaster</Filter>
     </None>
@@ -87,10 +92,10 @@
     <ClInclude Include="..\..\Source\Blaster\Blaster.h">
       <Filter>Source\Blaster</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Blaster\BlasterGameModeBase.cpp">
+    <ClInclude Include="..\..\Source\Blaster\CombatState.h">
       <Filter>Source\Blaster</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Blaster\BlasterGameModeBase.h">
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Blaster\Team.h">
       <Filter>Source\Blaster</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Blaster\TurningInPlace.h">
@@ -99,10 +104,22 @@
     <Filter Include="Source\Blaster\BlasterComponent">
       <UniqueIdentifier>{4816C1F5-2C58-3BBE-86C7-2566B871BE1E}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Blaster\BlasterComponent\BuffComponent.cpp">
+      <Filter>Source\Blaster\BlasterComponent</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\BlasterComponent\BuffComponent.h">
+      <Filter>Source\Blaster\BlasterComponent</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Blaster\BlasterComponent\CombatComponent.cpp">
       <Filter>Source\Blaster\BlasterComponent</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Blaster\BlasterComponent\CombatComponent.h">
+      <Filter>Source\Blaster\BlasterComponent</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\BlasterComponent\LagCompensationComponent.cpp">
+      <Filter>Source\Blaster\BlasterComponent</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\BlasterComponent\LagCompensationComponent.h">
       <Filter>Source\Blaster\BlasterComponent</Filter>
     </ClInclude>
     <Filter Include="Source\Blaster\Character">
@@ -123,20 +140,131 @@
     <Filter Include="Source\Blaster\GameMode">
       <UniqueIdentifier>{3EA2507D-5ADC-33F4-AB1D-9213C5883358}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Blaster\GameMode\BlasterGameMode.cpp">
+      <Filter>Source\Blaster\GameMode</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\GameMode\BlasterGameMode.h">
+      <Filter>Source\Blaster\GameMode</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\GameMode\CaptureTheFlagGameMode.cpp">
+      <Filter>Source\Blaster\GameMode</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\GameMode\CaptureTheFlagGameMode.h">
+      <Filter>Source\Blaster\GameMode</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Blaster\GameMode\LobbyGameMode.cpp">
       <Filter>Source\Blaster\GameMode</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Blaster\GameMode\LobbyGameMode.h">
       <Filter>Source\Blaster\GameMode</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\GameMode\TeamGameMode.cpp">
+      <Filter>Source\Blaster\GameMode</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\GameMode\TeamGameMode.h">
+      <Filter>Source\Blaster\GameMode</Filter>
+    </ClInclude>
+    <Filter Include="Source\Blaster\GameState">
+      <UniqueIdentifier>{1DC7CE2D-028B-3C7E-8618-A108C4F60A3F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Blaster\GameState\BlasterGameState.cpp">
+      <Filter>Source\Blaster\GameState</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\GameState\BlasterGameState.h">
+      <Filter>Source\Blaster\GameState</Filter>
+    </ClInclude>
     <Filter Include="Source\Blaster\HUD">
       <UniqueIdentifier>{B4AACAF6-499E-3F03-B768-0F749DE5B65B}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Blaster\HUD\Anouncement.cpp">
+      <Filter>Source\Blaster\HUD</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\HUD\Anouncement.h">
+      <Filter>Source\Blaster\HUD</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\HUD\BlasterHUD.cpp">
+      <Filter>Source\Blaster\HUD</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\HUD\BlasterHUD.h">
+      <Filter>Source\Blaster\HUD</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\HUD\CharacterOverlay.cpp">
+      <Filter>Source\Blaster\HUD</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\HUD\CharacterOverlay.h">
+      <Filter>Source\Blaster\HUD</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\HUD\ElimAnnouncement.cpp">
+      <Filter>Source\Blaster\HUD</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\HUD\ElimAnnouncement.h">
+      <Filter>Source\Blaster\HUD</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Blaster\HUD\OverHeadWidget.cpp">
       <Filter>Source\Blaster\HUD</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Blaster\HUD\OverHeadWidget.h">
       <Filter>Source\Blaster\HUD</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\HUD\ReturnToMainMenu.cpp">
+      <Filter>Source\Blaster\HUD</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\HUD\ReturnToMainMenu.h">
+      <Filter>Source\Blaster\HUD</Filter>
+    </ClInclude>
+    <Filter Include="Source\Blaster\Interface">
+      <UniqueIdentifier>{B44959C4-A58D-3122-9034-CDFEE092CBC7}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Blaster\Interface\InteractWithCrosshairInterface.cpp">
+      <Filter>Source\Blaster\Interface</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Interface\InteractWithCrosshairInterface.h">
+      <Filter>Source\Blaster\Interface</Filter>
+    </ClInclude>
+    <Filter Include="Source\Blaster\Pickups">
+      <UniqueIdentifier>{BB70ABB9-CE0C-3B18-AFBB-ED8205144F73}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Blaster\Pickups\AmmoPickup.cpp">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Pickups\AmmoPickup.h">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Pickups\HealthPickup.cpp">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Pickups\HealthPickup.h">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Pickups\JumpPickup.cpp">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Pickups\JumpPickup.h">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Pickups\Pickup.cpp">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Pickups\Pickup.h">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Pickups\PickupSpawnPoint.cpp">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Pickups\PickupSpawnPoint.h">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Pickups\ShieldPickup.cpp">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Pickups\ShieldPickup.h">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Pickups\SpeedPickup.cpp">
+      <Filter>Source\Blaster\Pickups</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Pickups\SpeedPickup.h">
+      <Filter>Source\Blaster\Pickups</Filter>
     </ClInclude>
     <Filter Include="Source\Blaster\PlayerController">
       <UniqueIdentifier>{057539C8-6A62-3CA5-A52A-91A9DC512EDA}</UniqueIdentifier>
@@ -147,13 +275,67 @@
     <ClInclude Include="..\..\Source\Blaster\PlayerController\BlasterPlayerController.h">
       <Filter>Source\Blaster\PlayerController</Filter>
     </ClInclude>
+    <Filter Include="Source\Blaster\PlayerStart">
+      <UniqueIdentifier>{F717C74F-9C25-3969-A6C4-24AAA30B4B25}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Blaster\PlayerStart\TeamPlayerStart.cpp">
+      <Filter>Source\Blaster\PlayerStart</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\PlayerStart\TeamPlayerStart.h">
+      <Filter>Source\Blaster\PlayerStart</Filter>
+    </ClInclude>
+    <Filter Include="Source\Blaster\PlayerState">
+      <UniqueIdentifier>{36DA2CE2-FD78-334E-BB19-1138BC13899E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Blaster\PlayerState\BlasterPlayerState.cpp">
+      <Filter>Source\Blaster\PlayerState</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\PlayerState\BlasterPlayerState.h">
+      <Filter>Source\Blaster\PlayerState</Filter>
+    </ClInclude>
     <Filter Include="Source\Blaster\Weapon">
       <UniqueIdentifier>{816D2633-5BC4-3359-ADC4-F063AA87E942}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Blaster\Weapon\Casing.cpp">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Weapon\Casing.h">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Weapon\Flag.cpp">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Weapon\Flag.h">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Weapon\HitScanWeapon.cpp">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Weapon\HitScanWeapon.h">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Blaster\Weapon\Projectile.cpp">
       <Filter>Source\Blaster\Weapon</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Blaster\Weapon\Projectile.h">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Weapon\ProjectileBullet.cpp">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Weapon\ProjectileBullet.h">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Weapon\ProjectileGrenade.cpp">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Weapon\ProjectileGrenade.h">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Weapon\ProjectileRocket.cpp">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Weapon\ProjectileRocket.h">
       <Filter>Source\Blaster\Weapon</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Blaster\Weapon\ProjectileWeapon.cpp">
@@ -162,11 +344,35 @@
     <ClInclude Include="..\..\Source\Blaster\Weapon\ProjectileWeapon.h">
       <Filter>Source\Blaster\Weapon</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Weapon\RocketMovementComponent.cpp">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Weapon\RocketMovementComponent.h">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Blaster\Weapon\ShotGun.cpp">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Weapon\ShotGun.h">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Blaster\Weapon\Weapon.cpp">
       <Filter>Source\Blaster\Weapon</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Blaster\Weapon\Weapon.h">
       <Filter>Source\Blaster\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Blaster\Weapon\WeaponTypes.h">
+      <Filter>Source\Blaster\Weapon</Filter>
+    </ClInclude>
+    <Filter Include="Source\Blaster\Zone">
+      <UniqueIdentifier>{296D83EE-1AC5-3F69-9D28-775A98AA5E2F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Blaster\Zone\FlagZone.cpp">
+      <Filter>Source\Blaster\Zone</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Blaster\Zone\FlagZone.h">
+      <Filter>Source\Blaster\Zone</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

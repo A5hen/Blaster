@@ -14,9 +14,9 @@ void UOverHeadWidget::SetDisplayText(FString TextToDisplay)
 
 void UOverHeadWidget::ShowPlayerNetRole(APawn* InPawn)
 {
-	ENetRole RemoteRole = InPawn->GetRemoteRole();
+	ENetRole NetRole = InPawn->GetLocalRole();
 	FString Role;
-	switch (RemoteRole)
+	switch (NetRole)
 	{
 	case ENetRole::ROLE_Authority:
 		Role = FString("Authority");
@@ -32,8 +32,8 @@ void UOverHeadWidget::ShowPlayerNetRole(APawn* InPawn)
 		break;
 	}
 
-	FString RemoteRoleString = FString::Printf(TEXT("Local Role: %s"), *Role);
-	SetDisplayText(RemoteRoleString);
+	FString NetRoleString = FString::Printf(TEXT("Local Role: %s"), *Role);
+	SetDisplayText(NetRoleString);
 }
 
 void UOverHeadWidget::NativeDestruct()

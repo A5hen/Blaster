@@ -53,9 +53,14 @@ private:
 
 	void MenuTearDown();
 
+	UPROPERTY()
 	class UMultiPlayerSessionsSubsystem* MultiPlayerSessionsSubsystem;
 
+	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess = true))
 	int32 ConnectionsNum{ 4 };
+
+	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess = true))
 	FString TypeToMatch{ "FreeForAll" };
+
 	FString PathToLobby{ TEXT("") };
 };

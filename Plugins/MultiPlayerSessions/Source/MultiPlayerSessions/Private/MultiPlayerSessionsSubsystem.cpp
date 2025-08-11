@@ -23,6 +23,9 @@ void UMultiPlayerSessionsSubsystem::CreateSession(int32 NumPublicConnections, FS
 {
 	if (!OnlineSessionInterface.IsValid())return;
 
+	DesiredNumPublicConnections = NumPublicConnections;
+	DesiredTypeToMatch = MatchType;
+
 	auto ExistSession = OnlineSessionInterface->GetNamedSession(NAME_GameSession);
 	if (ExistSession != nullptr)
 	{
@@ -47,7 +50,7 @@ void UMultiPlayerSessionsSubsystem::CreateSession(int32 NumPublicConnections, FS
 	LastSessionSettings->Set(FName("MatchType"), MatchType, EOnlineDataAdvertisementType::ViaOnlineServiceAndPing);
 	LastSessionSettings->BuildUniqueId = 1;
 
-	ULocalPlayer* Player = GetWorld()->GetFirstLocalPlayerFromController();
+	const ULocalPlayer* Player = GetWorld()->GetFirstLocalPlayerFromController();
 
 	if (!OnlineSessionInterface->CreateSession(*Player->GetPreferredUniqueNetId(), NAME_GameSession, *LastSessionSettings))
 	{
